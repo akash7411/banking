@@ -1,0 +1,40 @@
+package com.syt;
+public class Loan implements Account
+{
+     int accounm;
+     String  accName;
+     double  balance;
+     Loan(int Accounts,String accName,double balance)
+     {
+    	 this.accName=accName;
+    	 this.balance=balance;
+    	 this.accounm=accounm;
+     }
+	@Override
+	public void withdraw(double amt) 
+	{
+		if(amt<=balance)
+		{
+			balance=balance-amt;
+			System.out.println("Withdrawing Rs"+amt);
+		}
+		else
+		{
+			System.out.println("Withdrawing not done Rs"+amt);
+		}
+		
+	}
+	@Override
+	public void deposit(double amt) 
+	{
+	    balance=balance+amt;
+	    System.out.println("depositing Rs"+amt);
+	    
+	}
+	@Override
+	public void checkBal() 
+	{
+		System.out.println("Balance Rs"+balance);
+		
+	}
+}
